@@ -1,6 +1,7 @@
 // matrix.h - Matrix class declaration
 #if !defined(_MATRIX_H_)
 #define _MATRIX_H_
+#define is_power2(X)  (((X&(X-1)) != 0) ? (false) : (true))
 #include <string>
 #include <vector>
 
@@ -19,7 +20,7 @@ public:
     Matrix(std::vector<std::vector<int>> A);
     Matrix operator+(const Matrix B);
     Matrix operator-(const Matrix B);
-    quadrants split();
+    void split();
     void printMatrix();
 };
 
