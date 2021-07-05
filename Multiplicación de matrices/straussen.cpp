@@ -8,8 +8,8 @@ int main() {
   A = {
     {2,2,3,3},
     {2,6,3,3},
-    {8,2,3,3},
-    {2,6,3,3},
+    {8,2,4,3},
+    {2,6,3,9},
   };
 
   B = {
@@ -23,10 +23,14 @@ int main() {
   MatC = MatA + MatB;
   MatD = MatA - MatB;
 
+  MatA.printMatrix();
+  Matrix q11, q12, q21, q22;
+  MatA.split(q11, q12, q21, q22);
 
+  q11.printMatrix();
+  q12.printMatrix();
+  q21.printMatrix();
+  q22.printMatrix();
+  
   return 0;
 }
-
-/*Matrix strassenmtd(Matrix A, Matrix B){
-  
-}*/
