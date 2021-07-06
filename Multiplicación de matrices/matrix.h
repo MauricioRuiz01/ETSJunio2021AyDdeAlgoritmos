@@ -9,7 +9,7 @@ class Matrix
 {
 private:
     std::vector<std::vector<int>> mat;
-    
+    int len;
 public:
     Matrix();
     Matrix(std::vector<std::vector<int>> A);
@@ -17,7 +17,10 @@ public:
     Matrix operator+(const Matrix B);
     Matrix operator-(const Matrix B);
     void split(Matrix &q11, Matrix &q12, Matrix &q21, Matrix &q22);
+    void join(Matrix &q11, Matrix &q12, Matrix &q21, Matrix &q22);
+    void multiply(Matrix B);
     void printMatrix();
+    int getLength();
 };
 
 void assignValue(std::vector<std::vector<int>> &q11,std::vector<std::vector<int>> &q12,

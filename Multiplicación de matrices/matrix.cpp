@@ -8,10 +8,16 @@ Matrix::Matrix(){}
 
 Matrix::Matrix(vector<vector<int>> A){
 	Matrix::mat = A;
+	Matrix::len = Matrix::mat.at(0).size();
 }
 
 void Matrix::setMatrix(vector<vector<int>> A){
 	Matrix::mat = A;
+	Matrix::len = Matrix::mat.at(0).size();
+}
+
+int Matrix::getLength(){
+	return Matrix::len;
 }
 
 Matrix Matrix::operator+(const Matrix B){
@@ -48,9 +54,11 @@ Matrix Matrix::operator-(const Matrix B){
 	return res;
 }
 
-/**
- * TODO:Create split function for each object
- *  */
+void Matrix::multiply(Matrix B){
+	B.printMatrix();
+	Matrix::mat.at(0).at(0) = (Matrix::mat.at(0).at(0)) * (B.mat.at(0).at(0)); 	
+}
+
 void Matrix::split(Matrix &Q11, Matrix &Q12, Matrix &Q21, Matrix &Q22){
 	vector<vector<int>> q11,q12,q21,q22; 
 	vector<int>aux;
@@ -85,6 +93,11 @@ void Matrix::split(Matrix &Q11, Matrix &Q12, Matrix &Q21, Matrix &Q22){
 	Q21.setMatrix(q21);
 	Q22.setMatrix(q22);
 }
+
+void join(Matrix &q11, Matrix &q12, Matrix &q21, Matrix &q22){
+
+}
+    
 
 void Matrix::printMatrix(){ 
 	int len = Matrix::mat.size();
